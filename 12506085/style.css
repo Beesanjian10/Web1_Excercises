@@ -1,0 +1,319 @@
+/* Please note some extra styles have been used that are not in the slides
+this is because I have taken this course before in my CE major and we used much more advanced 
+CSS styles for our html files and it would be a great way for me to refresh my mind */
+
+/* Fonts (Google Fonts)  */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;600&display=swap');
+
+/* Universal selector */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page background and base text  */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4a3b47;
+    background-color: #fdf3f5;
+}
+
+/* Headings (grouping selector)  */
+h1, h2, h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    color: #6d3b5a;
+}
+
+/*HEADER*/
+header {
+    background-color: #e8a5b8;
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    color: white;
+}
+
+header p {
+    font-size: 18px;
+    color: #6d3b5a;
+    margin-bottom: 20px;
+}
+
+/* Navigation (flexbox + sticky)  */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #6d3b5a;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    padding: 14px 18px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Pseudo-classes for links */
+nav a:hover {
+    background-color: #e8a5b8;
+    color: #4a3b47;
+}
+/*--- I used odd and even for the nth-child instead of using numbers as 
+shown inside the slides ---*/
+
+nav li:nth-child(odd) a {
+    font-weight: 600;
+}
+
+/* MAIN CONTENT*/
+main {
+    width: min(92%, 1000px);   /* math function */
+    margin: 30px auto;
+}
+
+/* Every section looks like a soft card  : this means it will be more eye 
+catching to the easier and neater when reading the html page*/
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 2px solid #f5d0da;
+    border-radius: 15px;
+}
+
+/* Pseudo-element: flower before each section title to set a more professional and neater tone */
+section h2 {
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px dotted #e8a5b8;
+}
+
+section h2::before {
+    content: "✿ ";
+    color: #e8a5b8;
+}
+
+section h3 {
+    margin: 15px 0 8px;
+    font-size: 20px;
+}
+
+/* About section */
+#about p::first-letter {
+    font-size: 32px;
+    font-weight: bold;
+    color: #d96c8f;
+}
+
+/* Class selector for the profile picture */
+.profile-pic,
+#about img {
+    display: block;
+    width: min(100%, 280px);
+    height: auto;
+    margin: 25px auto 0;
+    border: 5px solid #e8a5b8;
+    border-radius: 50%;
+}
+
+/* Interests and Skills lists as little tags (flexbox) */
+#interests ul,
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+}
+
+#interests li,
+#skills li {
+    background-color: #fbe4ea;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+#interests li:hover,
+#skills li:hover {
+    background-color: #e8a5b8;
+    color: white;
+}
+
+/* Education table */
+#education {
+    overflow-x: auto;   /* lets the table scroll on small screens */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #f5d0da;
+    text-align: left;
+}
+
+th {
+    background-color: #6d3b5a;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fdf3f5;
+}
+
+tbody tr:hover {
+    background-color: #fbe4ea;
+}
+
+/*  Academic activities list */
+#activities ol {
+    margin-left: 25px;
+}
+
+#activities li {
+    margin-bottom: 10px;
+}
+
+#activities li:last-child {
+    margin-bottom: 0;
+}
+
+/*  Experience articles  */
+article {
+    margin-top: 15px;
+    padding: 15px 20px;
+    background-color: #fdf3f5;
+    border-left: 6px solid #e8a5b8;
+    border-radius: 10px;
+}
+
+article:hover {
+    border-left-color: #6d3b5a;
+}
+
+article h3 {
+    margin-top: 0;
+}
+
+/* ---------- Contact section ---------- */
+#contact p {
+    margin-bottom: 5px;
+}
+
+form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fdf3f5;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border: 2px solid #f5d0da;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+/* Form pseudo-classes */
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #6d3b5a;
+}
+
+input:valid,
+textarea:valid {
+    border-color: #8fc9a3;
+}
+
+button {
+    padding: 10px 22px;
+    margin-top: 10px;
+    background-color: #d96c8f;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6d3b5a;
+}
+
+button:active {
+    background-color: #4a3b47;
+}
+
+/*FOOTER*/
+footer {
+    background-color: #6d3b5a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+/*RESPONSIVE DESIGN (Media Queries) : to adjust to every screen*/
+@media screen and (max-width: 768px) {
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    /* Stack the navigation links in a column */
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a {
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        padding: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 25px 10px 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
